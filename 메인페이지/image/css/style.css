@@ -1,0 +1,34 @@
+body{width: 100%; height: 100%;}
+#wrap {
+    width: 1920px;
+    height: 2329px;
+    background-color: #fff;
+}
+.mga{margin: 0 auto;}
+.fl{float: left;}
+.fr{float: right;}
+.pr{position: relative;}
+.pa{position: absolute;}
+
+#header{width: 100%; height: 4.3%; background: rebeccapurple;}
+.header-cont{width: 68.5%; height: 100%; background: slategray;}
+.logoback{width: 11.7%; height: 44.1%; background: snow;}
+.search{width: 44.5%; height: 100%; background: orange;}
+.function{width: 20%; height: 44.1%; background: rosybrown;}
+
+#banner{width: 100%; height: 22.9%; background: red;}
+.bannerTop{width: 100%; height: 8.3%; background: hotpink;}
+.bannerTop>.nav{width: 68.5%; height: 100%; background: greenyellow; position: relative;}
+.bannerTop>.nav>ul{margin: 0 auto;}
+.bannerTop>.nav>ul>li{float: left; margin-right: 20px; text-align: center;}
+.bannerTop>.nav>ul>li>a{display: block; width: 100%; height: 100%; position: relative;
+font-size: 17px; color: #1f3270; padding: 0 50px; line-height: 261%;}
+.bannerBottom{}
+.bannerImg{}
+.bannerButton{}
+.bannerBotoomBorder{}
+
+#cotents{width: 100%; height: 60.8%; background: silver;}
+
+
+#footer{width: 100%; height: 12%; background: skyblue;}

@@ -1,0 +1,76 @@
+.ext_link:after {
+  content: "\f08e";
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  text-decoration: none;
+  padding-left: 3px;
+  position: absolute;
+}
+
+.caret-up {
+	color:#FF8290;
+}
+
+.caret-up:before {
+  content: "\f0d8";
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  text-decoration: none;
+  padding-right: 5px;
+}
+
+.caret-down {
+	color:#0172F0;
+}
+.caret-down:before {
+  content: "\f0d7";
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  text-decoration: none;
+  padding-right: 5px;
+}
+
+/* sns-share-wrap */
+.content-share-wrap {}
+.content-share-wrap .btn-group { display:block;float:right;overflow:hidden;}
+.content-share-wrap button { float:left;margin-left:10px;}
+.content-share-wrap button > span,
+.content-share-wrap .btn-sns > span { display:block;overflow:hidden;position:absolute;left:-9999999px;width:0;height:0;font-size:0;}
+.content-share-wrap .content-share-layer { display:none; }
+.content-share-wrap .content-share-layer.active { display:block;position:absolute;right:-48px;top:45px;z-index:10;width:420px;text-align:right;}
+.content-share-wrap .content-share-layer .close-btn-share-layer { display:block;float:none;position:absolute;top: 0;right: 0;width: 24px;height: 24px;
+    background-image: url(../image/icon-pop-close.png);background-repeat:no-repeat;background-position:50% 50%;background-size: 12px;}
+.content-share-wrap .content-share-layer .sns-list-wrap {display:inline-block;position:relative;background-color:#fff;border:1px solid #333333;padding:17px;box-sizing:border-box;text-align:center;}
+.content-share-wrap .content-share-layer .sns-list { display:inline-block;overflow:hidden;}
+.content-share-wrap .content-share-layer .sns-list > li { float:left;margin:5px;vertical-align:middle;}
+.content-share-wrap .content-share-layer .sns-list:after {
+    content: '';
+    position: absolute;
+    width:14px;height:13px;
+    background-image:url("../image/layout/content-share-balloon-arw.png");background-size:14px 13px;background-repeat:no-repeat;background-position:0 0;
+    top:-13px;
+    right:65px;
+}
+
+.content-share-wrap .btn-group .btn-share,
+.content-share-wrap .btn-group .btn-print { display:block;width:40px;height:40px;border:1px solid #333;border-radius:50%;background-repeat:no-repeat;background-position:50% 50%;}
+.content-share-wrap .btn-group .btn-share {background-image:url("../image/layout/content-share-icon-share.svg");background-size:16px 20px;}
+.content-share-wrap .btn-group .btn-print {background-image:url("../image/layout/content-share-icon-print.svg");background-size:18px 20px;}
+.content-share-wrap .btn-sns {display:block;overflow:hidden;position:relative;width:36px;height:36px;background-repeat:no-repeat;background-position:50% 50%;border-radius:50%;cursor:pointer;}
+.content-share-wrap .btn-sns.myscrap {background-image:url("../image/layout/sns_img.png");background-size:28px 28px;border:1px solid #dddddd;box-sizing:border-box;}
+.content-share-wrap .btn-sns.facebook {background-color:#0054a6;background-image:url("../image/layout/sns-logo-facebook-w.svg");background-size:10px 20px;}
+.content-share-wrap .btn-sns.twitter {background-color:#00aeef;background-image:url("../image/layout/sns-logo-twitter-w.svg");background-size:25px 18px;}
+.content-share-wrap .btn-sns.naverblog {background-color:#02d401;background-image:url("../image/layout/sns-logo-naver-w.svg");background-size:17px 15px;}
+.content-share-wrap .btn-sns.kakaostory {background-color:#f3d020;background-image:url("../image/layout/sns-logo-kakaostory-w.png");background-size:11px 21px;}
+.content-share-wrap .btn-sns.instagram {background-image:url("../image/layout/sns-logo-instagram-bg.svg");background-size:100% 100%;background-position:0 0;}
+.content-share-wrap .btn-sns.instagram:after {content:"";display:block;overflow:hidden;position:absolute;left:50%;top:50%;z-index:1;width:22px;height:22px;background-image:url("../image/layout/sns-logo-instagram-w.png");background-size:100% auto;margin-top:-11px;margin-left:-11px;}
+.content-share-wrap .btn-linkurl { display:inline-block;border:1px solid #ddd;border-radius:15px;margin-top:3px;padding:0 12px;line-height:28px;font-size:14px;color:#555555;cursor:pointer;}
+@media screen and ( max-width:480px) {
+    .content-share-wrap .content-share-layer.active {width:320px;}
+}

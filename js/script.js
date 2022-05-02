@@ -1,3 +1,7 @@
+/* cursor pointer */
+$('img[alt="더보기아이콘"]').css('cursor','pointer');
+
+
 //top 버튼
 $( window ).scroll( function() {
 	if ( $( this ).scrollTop() > 400 ) {
@@ -206,11 +210,7 @@ function informSlide(){
         });
     },3000);
 }
-$('.financialWrap').hover(function(){
-    clearInterval(informTimer);
-},function(){
-    informSlide();
-});
+
 
 $('.informNext').click(function(){
     financialInform.animate({left:-321},500,function(){
@@ -238,50 +238,61 @@ $('.informStop').click(function(){
     }
 });
 
-let alram1Timer;
-let alram1Inform=$('.alram1Img');
-let alram1Prev=$('.alram1Prev');
-let alram1Stop=$('.alram1Stop');
-let alram1Next=$('.alram1Next');
+
 
 //알림판1
-alram1Slide();
-function alram1Slide(){
-    alram1Timer=setInterval(function(){
-        alram1Inform.animate({left:-317},500,function(){
-            $(this).children('a:first').insertAfter($(this).children('a:last'))
-            $(this).css({left:0});
-        });
-    },3000);
-}
-$('.alram1').hover(function(){
-    clearInterval(alram1Timer);
-},function(){
+$(function(){
+    let alram1Timer;
+    let alram1Inform=$('.alram1Img');
+    let alram1Prev=$('.alram1Prev');
+    let alram1Stop=$('.alram1Stop');
+    let alram1Next=$('.alram1Next');    
+    let aramCheck=1;
+
     alram1Slide();
-});
-
-$('.alram1Next').click(function(){
-    alram1Inform.animate({left:-317},500,function(){
-        $(this).children('a:first').insertAfter($(this).children('a:last'));
-        $(this).css({left:0});
-    })
-});
-
-$('.alram1Prev').click(function(){
-        alram1Inform.children('a:last').insertBefore(alram1Inform.children('a:first'))
-        alram1Inform.css({left:-317}).stop().animate({left:0},500);
-});
-
-let alram1clickStop=true;
-
-$('.alram1Stop').click(function(){
-
-    if (alram1clickStop==true){
-        $(this).css({background:'url(./image/icon/ico_ban_play.png) no-repeat'});
-        clearInterval(informTimer);
-        alram1clickStop=false;
-    }else{
-        $(this).css({background:'url(./image/icon/ico_ban_stop.png) no-repeat'});
-        alram1clickStop=true;
+    function alram1Slide(){
+        alram1Timer=setInterval(function(){
+            alram1Inform.animate({left:-317},500,function(){
+                $(this).children('a:first').insertAfter($(this).children('a:last'))
+                $(this).css({left:0});
+                aramCheck++;
+                if(aramCheck==$('.alram1Img>a').size()+1){aramCheck=0};
+                $('.alram1>.title>.count').text(aramCheck+" / 7");
+            });
+        },3000);
     }
+    
+    
+    $('.alram1Next').click(function(){
+        alram1Inform.animate({left:-317},500,function(){
+            $(this).children('a:first').insertAfter($(this).children('a:last'));
+            $(this).css({left:0});
+            aramCheck++;
+            if(aramCheck>=8){aramCheck=1};
+            $('.alram1>.title>.count').text(aramCheck+" / 7");
+        })
+    });
+    
+    $('.alram1Prev').click(function(){
+            alram1Inform.children('a:last').insertBefore(alram1Inform.children('a:first'))
+            alram1Inform.css({left:-317}).stop().animate({left:0},500);
+            aramCheck--;
+            if(aramCheck<=0){aramCheck=7};
+            $('.alram1>.title>.count').text(aramCheck+" / 7");
+    });
+    
+    let alram1clickStop=true;
+    
+    $('.alram1Stop').click(function(){
+    
+        if (alram1clickStop==true){
+            $(this).css({background:'url(./image/icon/ico_ban_play.png) no-repeat'});
+            clearInterval(alram1Timer);
+            alram1clickStop=false;
+        }else{
+            $(this).css({background:'url(./image/icon/ico_ban_stop.png) no-repeat'});
+            alram1Slide();
+            alram1clickStop=true;
+        }
+    });
 });
